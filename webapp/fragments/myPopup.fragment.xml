@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog confirm="onConfirm" multiSelect="true" rememberSelections="true">
+		<!--<items>-->
+		
+		
+		<!--<DisplayListItem label="{name}" value="{state}">-->
+			
+		<!--</DisplayListItem>-->
+		
+		
+		<!--</items>-->
+		
+		
+	</SelectDialog>
+	
+</core:FragmentDefinition>

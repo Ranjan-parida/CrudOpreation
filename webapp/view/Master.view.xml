@@ -1,0 +1,41 @@
+<mvc:View xmlns="sap.m" xmlns:semantic="sap.f.semantic" xmlns:mvc="sap.ui.core.mvc" controllerName="webapp.Crud_Operation_for_User.controller.Master">
+
+	<semantic:SemanticPage id="masterPage" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
+		<semantic:titleHeading>
+			<Title id="masterPageTitle" text="User Related Information " level="H2"/>
+		</semantic:titleHeading>
+		<semantic:content>
+			<!-- For client side filtering add this to the items attribute: parameters: {operationMode: 'Client'}}" -->
+			<List id="list" 	mode="SingleSelectMaster"  width="auto" class="sapFDynamicPageAlignContent" items="{path: '/zuserinfoSet', sorter: {  path: 'Userid'  }, groupHeaderFactory: '.createGroupHeader'     }"   selectionChange=".onSelectionChange">
+				<headerToolbar>
+					<OverflowToolbar>
+						<SearchField id="searchField" showRefreshButton="true" tooltip="{i18n>masterSearchTooltip}" liveChange="onSearch" search="onSearch" width="auto">
+							<layoutData>
+								<OverflowToolbarLayoutData minWidth="150px" maxWidth="240px" shrinkable="true" priority="NeverOverflow"/>
+							</layoutData>
+						</SearchField>
+						<ToolbarSpacer/>
+						<Button id="sortButton" press=".onOpenViewSettings" icon="sap-icon://sort" type="Transparent"/>
+					<content>
+					    <Label text="Label" width="100%" id="label0"/>
+					    <Label text="First Name" width="100%" id="label4"/>
+					</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<items>
+					<ObjectListItem type="Navigation" press=".onSelectionChange" title="{Firstname}"
+					        intro="{Lastname}" number="{Phone}"  
+					                                             >
+						
+					</ObjectListItem>
+				</items>
+					<items>
+					<ObjectListItem type="Navigation" press=".onSelectionChange" 
+					                      intro="{Lastname}" title="{Firstname}" number="{Userid}"                         >
+						
+					</ObjectListItem>
+				</items>
+			</List>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>

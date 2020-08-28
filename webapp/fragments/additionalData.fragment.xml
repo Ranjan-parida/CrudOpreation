@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:ranjan="webapp.Crud_Operation_for_User.controlles">
+	
+	<!--<ranjan:myHeading color="blue" spiderman="My Personal Data"></ranjan:myHeading>-->
+	<!--<ranjan:myHeading color="red" border="2px solid red" spiderman="Wow"></ranjan:myHeading>-->
+	<!--<f:SimpleForm  visible="{sampleModel>/myVis}">-->
+	<!--	<f:content>-->
+	<!--		<Label text="{i18n>XLBL_UG}"></Label>-->
+	<!--		<Text text="{usage}"></Text>-->
+	<!--		<Label text="{i18n>XLBL_CL}"></Label>-->
+	<!--		<Text text="{colour}"></Text>-->
+	<!--		<Label text="{i18n>XLBL_PR}"></Label>-->
+	<!--		<Text text="{price}"></Text>-->
+	<!--		<Text text="{currency}"></Text>-->
+	<!--	</f:content>-->
+	<!--</f:SimpleForm>-->
+		<Label text="User id" width="100%" id="label_01"></Label>
+	            		<Input width="100%" id="input_01" value="{Userid}"></Input>
+	            			<Label text="First Name" width="100%" id="label_02"></Label>
+	            		<Input width="100%" id="input_02" value="{Firstname}"></Input>
+	            			<Label text="Last Name" width="100%" id="label_03"></Label>
+	            		<Input width="100%" id="input_03" value="{Lastname}"></Input>
+	            			<Label text="Email Id" width="100%" id="label_04"></Label>
+	            		<Input width="100%" id="input_04" value="{Email}"></Input>
+	            			<Label text="Phone No" width="100%" id="label_05"></Label>
+	            		<Input width="100%" id="input_05" value="{Phone}"></Input>
+</core:FragmentDefinition>

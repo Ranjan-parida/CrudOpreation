@@ -1,0 +1,89 @@
+<mvc:View xmlns="sap.m" xmlns:semantic="sap.f.semantic" xmlns:mvc="sap.ui.core.mvc" controllerName="webapp.Crud_Operation_for_User.controller.Detail" viewName="{Userid}" >
+	<semantic:SemanticPage id="detailPage" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:titleHeading>
+			<Title text="{Firstname}" level="H2"/>
+				
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<ObjectAttribute title="User Details"/>
+
+		</semantic:headerContent>
+		<!--Semantic ShareMenu Buttons-->
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press=".onSendEmailPress"/>
+		</semantic:sendEmailAction>
+
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press=".onCloseDetailPress"/>
+		</semantic:closeAction>
+
+		<semantic:fullScreenAction>
+			<semantic:FullScreenAction id="enterFullScreen" visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}" press=".toggleFullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction id="exitFullScreen" visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}" press=".toggleFullScreen"/>
+		</semantic:exitFullScreenAction>
+
+	<semantic:content>
+
+	    <IconTabBar selectedKey="__filter1" id="bar0">
+
+	        <items>
+
+	            <IconTabFilter text="Orders" count="22" showAll="true" id="filter0">
+
+	                <content>
+	                	
+	                		<ObjectHeader title="{Email}" intro="{Userid}" number="{Firstname}" numberUnit="{Lastname}" icon="sap-icon://accept"></ObjectHeader>
+
+	    <!--             	<Toolbar>-->
+						
+					
+					<!--	<ToolbarSpacer></ToolbarSpacer>-->
+					<!--	<Button text="Create" icon="sap-icon://create-form" press ="onCreate"  ></Button>-->
+					<!--	<Button text="Edit" icon="sap-icon://edit" press ="onEdit" ></Button>-->
+					<!--	<Button text="Delete" icon="sap-icon://delete" press="onDelete"></Button>-->
+					<!--</Toolbar>  -->
+
+	                </content>
+
+	            </IconTabFilter>
+
+	            <IconTabFilter text="UserI ID" count="10" icon="sap-icon://task" iconColor="Critical" id="filter1">
+	            	<Label text="User id" width="100%" id="label_01"></Label>
+	            		<Input width="100%" id="input_01" value="{Userid}"></Input>
+	            			<Label text="First Name" width="100%" id="label_02"></Label>
+	            		<Input width="100%" id="input_02" value="{Firstname}"></Input>
+	            			<Label text="Last Name" width="100%" id="label_03"></Label>
+	            		<Input width="100%" id="input_03" value="{Lastname}"></Input>
+	            			<Label text="Email Id" width="100%" id="label_04"></Label>
+	            		<Input width="100%" id="input_04" value="{Email}"></Input>
+	            			<Label text="Phone No" width="100%" id="label_05"></Label>
+	            		<Input width="100%" id="input_05" value="{Phone}"></Input>
+	     <!--       	<core:Fragment fragmentName="webapp.Crud_Operation_for_User.fragments.additionalData" id="displayForm"-->
+						<!--type="XML" ></core:Fragment>-->
+						<!--<core:Fragment fragmentName="webapp.Crud_Operation_for_User.fragments.changeAdditionalData" id="changeForm"-->
+						<!--type="XML" ></core:Fragment>-->
+	            		
+	            		
+	                 	<Toolbar>
+						
+					
+						<ToolbarSpacer></ToolbarSpacer>
+						<Button text="Create" icon="sap-icon://create-form" press ="onCreate"  ></Button>
+						<Button text="Edit" visible="{sampleModel>/myVis}" icon="sap-icon://edit" press ="onEdit" ></Button>
+						<Button text="Delete" icon="sap-icon://delete" press="onDelete"></Button>
+						<Button text="Save" visible="{= ! ${sampleModel>/myVis}}" icon="sap-icon://save" press="onSave"></Button>
+					</Toolbar>  
+	            </IconTabFilter>
+	           
+	         
+	            <IconTabFilter text="First Name" count="5" icon="sap-icon://shipping-status" iconColor="Positive" id="filter2"/></items>
+
+	    </IconTabBar>
+
+	</semantic:content>
+
+	</semantic:SemanticPage>
+
+</mvc:View>
